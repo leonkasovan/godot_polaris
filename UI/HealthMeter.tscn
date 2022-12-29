@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://UI/HealthMeter.gd" type="Script" id=1]
+[ext_resource path="res://UI/HPBackGround.png" type="Texture" id=2]
+[ext_resource path="res://UI/HPRails.png" type="Texture" id=3]
+[ext_resource path="res://UI/HPBar.png" type="Texture" id=4]
+[ext_resource path="res://UI/HPBox.png" type="Texture" id=5]
+[ext_resource path="res://UI/HPPortrait.png" type="Texture" id=6]
+[ext_resource path="res://Menus/theme.tres" type="Theme" id=7]
+[ext_resource path="res://UI/StaminaBar.png" type="Texture" id=8]
+[ext_resource path="res://UI/StaminaBox.png" type="Texture" id=9]
+[ext_resource path="res://UI/StaminaBackground.png" type="Texture" id=10]
+
+[node name="HealthMeter" type="Control"]
+margin_right = 80.0
+margin_bottom = 80.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HPBackGround" type="Sprite" parent="."]
+position = Vector2( 31.9257, 8 )
+texture = ExtResource( 2 )
+
+[node name="HPBar" type="Sprite" parent="."]
+position = Vector2( 1, 1 )
+scale = Vector2( 62, 1 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="HPBox" type="Sprite" parent="."]
+position = Vector2( 32, 8 )
+texture = ExtResource( 5 )
+
+[node name="HPPortrait" type="Sprite" parent="."]
+position = Vector2( -7, 10 )
+texture = ExtResource( 6 )
+
+[node name="HPRails" type="Sprite" parent="."]
+position = Vector2( 31.9257, 8 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -1.0
+margin_top = 14.0
+margin_right = 109.0
+margin_bottom = 41.0
+rect_scale = Vector2( 0.8, 0.8 )
+theme = ExtResource( 7 )
+text = "50 / 50"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stamina" type="Node2D" parent="."]
+
+[node name="StaminaBG" type="Sprite" parent="Stamina"]
+texture = ExtResource( 10 )
+offset = Vector2( 32, 8 )
+
+[node name="StaminaBar" type="Sprite" parent="Stamina"]
+position = Vector2( 1, 11 )
+scale = Vector2( 30, 1 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="StaminaBox" type="Sprite" parent="Stamina"]
+position = Vector2( 32, 8 )
+texture = ExtResource( 9 )
+
+[node name="StamRegen" type="Timer" parent="Stamina"]
+one_shot = true
+
+[connection signal="timeout" from="Stamina/StamRegen" to="." method="_on_StamRegen_timeout"]

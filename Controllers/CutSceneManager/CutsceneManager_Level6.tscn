@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Controllers/CutSceneManager/CutsceneManager_Level6.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 120 )
+
+[node name="CutsceneManager_Level6" type="Node2D"]
+script = ExtResource( 1 )
+dialogPath = [ "res://UI/Dialog/JSON/0017.Level6PreBoss.JSON" ]
+
+[node name="Trigger" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger"]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Trigger" to="." method="_on_Trigger_body_entered"]

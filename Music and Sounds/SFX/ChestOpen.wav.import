@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ChestOpen.wav-b9375b5a701e93ddc5d1773f43fd8d9b.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/SFX/ChestOpen.wav"
+dest_files=[ "res://.import/ChestOpen.wav-b9375b5a701e93ddc5d1773f43fd8d9b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

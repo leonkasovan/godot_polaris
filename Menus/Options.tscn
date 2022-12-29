@@ -1,0 +1,527 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Menus/Options.gd" type="Script" id=2]
+
+[node name="Options" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -320.0
+margin_top = -240.0
+margin_right = 320.0
+margin_bottom = 240.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -29.5
+margin_top = 49.0
+margin_right = 29.5
+margin_bottom = 74.0
+text = "OPTIONS"
+align = 1
+valign = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -136.0
+margin_top = -240.0
+margin_right = 136.0
+margin_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+margin_top = 159.0
+margin_right = 272.0
+margin_bottom = 321.0
+
+[node name="KeyboardControls" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+margin_right = 69.0
+margin_bottom = 200.0
+custom_constants/separation = -6
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/KeyboardControls"]
+margin_right = 69.0
+margin_bottom = 14.0
+text = "KEYBOARD"
+align = 1
+
+[node name="Separator" type="Label" parent="CenterContainer/HBoxContainer/KeyboardControls"]
+margin_top = 8.0
+margin_right = 69.0
+margin_bottom = 22.0
+text = "-----"
+align = 1
+
+[node name="Left" type="HBoxContainer" parent="CenterContainer/HBoxContainer/KeyboardControls"]
+margin_top = 16.0
+margin_right = 69.0
+margin_bottom = 36.0
+
+[node name="Left" type="Button" parent="CenterContainer/HBoxContainer/KeyboardControls/Left"]
+margin_right = 40.0
+margin_bottom = 20.0
+focus_neighbour_top = NodePath("../../../../../BackButton")
+focus_neighbour_right = NodePath("../../../GamepadControls/Shoot/ShootB")
+focus_neighbour_bottom = NodePath("../../Right/Right")
+text = "Left:"
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/KeyboardControls/Left"]
+margin_left = 44.0
+margin_top = 3.0
+margin_right = 47.0
+margin_bottom = 17.0
+text = "J"
+
+[node name="Right" type="HBoxContainer" parent="CenterContainer/HBoxContainer/KeyboardControls"]
+margin_top = 35.0
+margin_right = 69.0
+margin_bottom = 55.0
+
+[node name="Right" type="Button" parent="CenterContainer/HBoxContainer/KeyboardControls/Right"]
+margin_right = 48.0
+margin_bottom = 20.0
+focus_neighbour_top = NodePath("../../Left/Left")
+focus_neighbour_right = NodePath("../../../GamepadControls/Jump/JumpB")
+focus_neighbour_bottom = NodePath("../../Up/Up")
+text = "Right:"
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/KeyboardControls/Right"]
+margin_left = 52.0
+margin_top = 3.0
+margin_right = 55.0
+margin_bottom = 17.0
+text = "J"
+
+[node name="Up" type="HBoxContainer" parent="CenterContainer/HBoxContainer/KeyboardControls"]
+margin_top = 55.0
+margin_right = 69.0
+margin_bottom = 75.0
+
+[node name="Up" type="Button" parent="CenterContainer/HBoxContainer/KeyboardControls/Up"]
+margin_right = 34.0
+margin_bottom = 20.0
+focus_neighbour_top = NodePath("../../Right/Right")
+focus_neighbour_right = NodePath("../../../GamepadControls/Dash/DashB")
+focus_neighbour_bottom = NodePath("../../Down/Down")
+text = "Up:"
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/KeyboardControls/Up"]
+margin_left = 38.0
+margin_top = 3.0
+margin_right = 41.0
+margin_bottom = 17.0
+text = "J"
+
+[node name="Down" type="HBoxContainer" parent="CenterContainer/HBoxContainer/KeyboardControls"]
+margin_top = 75.0
+margin_right = 69.0
+margin_bottom = 95.0
+
+[node name="Down" type="Button" parent="CenterContainer/HBoxContainer/KeyboardControls/Down"]
+margin_right = 52.0
+margin_bottom = 20.0
+focus_neighbour_top = NodePath("../../Up/Up")
+focus_neighbour_right = NodePath("../../../GamepadControls/Use/UseB")
+focus_neighbour_bottom = NodePath("../../Shoot/Shoot")
+text = "Down:"
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/KeyboardControls/Down"]
+margin_left = 56.0
+margin_top = 3.0
+margin_right = 59.0
+margin_bottom = 17.0
+text = "J"
+
+[node name="Shoot" type="HBoxContainer" parent="CenterContainer/HBoxContainer/KeyboardControls"]
+margin_top = 95.0
+margin_right = 69.0
+margin_bottom = 115.0
+
+[node name="Shoot" type="Button" parent="CenterContainer/HBoxContainer/KeyboardControls/Shoot"]
+margin_right = 52.0
+margin_bottom = 20.0
+focus_neighbour_top = NodePath("../../Down/Down")
+focus_neighbour_right = NodePath("../../../GamepadControls/Special/SpecialB")
+focus_neighbour_bottom = NodePath("../../Jump/Jump")
+text = "Shoot:"
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/KeyboardControls/Shoot"]
+margin_left = 56.0
+margin_top = 3.0
+margin_right = 59.0
+margin_bottom = 17.0
+text = "J"
+
+[node name="Jump" type="HBoxContainer" parent="CenterContainer/HBoxContainer/KeyboardControls"]
+margin_top = 115.0
+margin_right = 69.0
+margin_bottom = 135.0
+
+[node name="Jump" type="Button" parent="CenterContainer/HBoxContainer/KeyboardControls/Jump"]
+margin_right = 48.0
+margin_bottom = 20.0
+focus_neighbour_top = NodePath("../../Shoot/Shoot")
+focus_neighbour_right = NodePath("../../../GamepadControls/Map/MapB")
+focus_neighbour_bottom = NodePath("../../Dash/Dash")
+text = "Jump:"
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/KeyboardControls/Jump"]
+margin_left = 52.0
+margin_top = 3.0
+margin_right = 55.0
+margin_bottom = 17.0
+text = "J"
+
+[node name="Dash" type="HBoxContainer" parent="CenterContainer/HBoxContainer/KeyboardControls"]
+margin_top = 140.0
+margin_right = 69.0
+margin_bottom = 160.0
+
+[node name="Dash" type="Button" parent="CenterContainer/HBoxContainer/KeyboardControls/Dash"]
+margin_right = 48.0
+margin_bottom = 20.0
+focus_neighbour_top = NodePath("../../Jump/Jump")
+focus_neighbour_bottom = NodePath("../../Use/Use")
+text = "Dash:"
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/KeyboardControls/Dash"]
+margin_left = 52.0
+margin_top = 3.0
+margin_right = 55.0
+margin_bottom = 17.0
+text = "J"
+
+[node name="Use" type="HBoxContainer" parent="CenterContainer/HBoxContainer/KeyboardControls"]
+margin_top = 160.0
+margin_right = 69.0
+margin_bottom = 180.0
+
+[node name="Use" type="Button" parent="CenterContainer/HBoxContainer/KeyboardControls/Use"]
+margin_right = 41.0
+margin_bottom = 20.0
+focus_neighbour_top = NodePath("../../Dash/Dash")
+focus_neighbour_bottom = NodePath("../../Special/Special")
+text = "Use:"
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/KeyboardControls/Use"]
+margin_left = 45.0
+margin_top = 3.0
+margin_right = 48.0
+margin_bottom = 17.0
+text = "J"
+
+[node name="Special" type="HBoxContainer" parent="CenterContainer/HBoxContainer/KeyboardControls"]
+margin_top = 180.0
+margin_right = 69.0
+margin_bottom = 200.0
+
+[node name="Special" type="Button" parent="CenterContainer/HBoxContainer/KeyboardControls/Special"]
+margin_right = 61.0
+margin_bottom = 20.0
+focus_neighbour_top = NodePath("../../Use/Use")
+focus_neighbour_bottom = NodePath("../../Map/Map")
+text = "Special:"
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/KeyboardControls/Special"]
+margin_left = 65.0
+margin_top = 3.0
+margin_right = 68.0
+margin_bottom = 17.0
+text = "J"
+
+[node name="Map" type="HBoxContainer" parent="CenterContainer/HBoxContainer/KeyboardControls"]
+margin_top = 200.0
+margin_right = 69.0
+margin_bottom = 220.0
+
+[node name="Map" type="Button" parent="CenterContainer/HBoxContainer/KeyboardControls/Map"]
+margin_right = 43.0
+margin_bottom = 20.0
+focus_neighbour_top = NodePath("../../Special/Special")
+focus_neighbour_bottom = NodePath("../../../../../BackButton")
+text = "Map:"
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/KeyboardControls/Map"]
+margin_left = 47.0
+margin_top = 3.0
+margin_right = 50.0
+margin_bottom = 17.0
+text = "J"
+
+[node name="GamepadControls" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+margin_left = 73.0
+margin_right = 141.0
+margin_bottom = 162.0
+custom_constants/separation = -5
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/GamepadControls"]
+margin_right = 68.0
+margin_bottom = 14.0
+text = "GAMEPAD"
+align = 1
+
+[node name="Separator" type="Label" parent="CenterContainer/HBoxContainer/GamepadControls"]
+margin_top = 9.0
+margin_right = 68.0
+margin_bottom = 23.0
+text = "-----"
+align = 1
+
+[node name="Shoot" type="HBoxContainer" parent="CenterContainer/HBoxContainer/GamepadControls"]
+margin_top = 18.0
+margin_right = 68.0
+margin_bottom = 38.0
+focus_neighbour_left = NodePath("../../../../BackButton")
+
+[node name="ShootB" type="Button" parent="CenterContainer/HBoxContainer/GamepadControls/Shoot"]
+margin_right = 52.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath("../../../KeyboardControls/Left/Left")
+focus_neighbour_top = NodePath("../../../../../BackButton")
+focus_neighbour_right = NodePath("../../../Others/CheckBox")
+focus_neighbour_bottom = NodePath("../../Jump/JumpB")
+text = "Shoot:"
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/GamepadControls/Shoot"]
+margin_left = 56.0
+margin_top = 3.0
+margin_right = 59.0
+margin_bottom = 17.0
+text = "J"
+
+[node name="Jump" type="HBoxContainer" parent="CenterContainer/HBoxContainer/GamepadControls"]
+margin_top = 33.0
+margin_right = 68.0
+margin_bottom = 53.0
+
+[node name="JumpB" type="Button" parent="CenterContainer/HBoxContainer/GamepadControls/Jump"]
+margin_right = 48.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath("../../../KeyboardControls/Right/Right")
+focus_neighbour_top = NodePath("../../Shoot/ShootB")
+focus_neighbour_right = NodePath("../../../Others/CheckBox")
+focus_neighbour_bottom = NodePath("../../Dash/DashB")
+text = "Jump:"
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/GamepadControls/Jump"]
+margin_left = 52.0
+margin_top = 3.0
+margin_right = 55.0
+margin_bottom = 17.0
+text = "J"
+
+[node name="Dash" type="HBoxContainer" parent="CenterContainer/HBoxContainer/GamepadControls"]
+margin_top = 48.0
+margin_right = 68.0
+margin_bottom = 68.0
+
+[node name="DashB" type="Button" parent="CenterContainer/HBoxContainer/GamepadControls/Dash"]
+margin_right = 48.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath("../../../KeyboardControls/Up/Up")
+focus_neighbour_top = NodePath("../../Jump/JumpB")
+focus_neighbour_right = NodePath("../../../Others/CheckBox")
+focus_neighbour_bottom = NodePath("../../Use/UseB")
+text = "Dash:"
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/GamepadControls/Dash"]
+margin_left = 52.0
+margin_top = 3.0
+margin_right = 55.0
+margin_bottom = 17.0
+text = "J"
+
+[node name="Use" type="HBoxContainer" parent="CenterContainer/HBoxContainer/GamepadControls"]
+margin_top = 63.0
+margin_right = 68.0
+margin_bottom = 83.0
+
+[node name="UseB" type="Button" parent="CenterContainer/HBoxContainer/GamepadControls/Use"]
+margin_right = 41.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath("../../../KeyboardControls/Down/Down")
+focus_neighbour_top = NodePath("../../Dash/DashB")
+focus_neighbour_right = NodePath("../../../Others/CheckBox")
+focus_neighbour_bottom = NodePath("../../Special/SpecialB")
+text = "Use:"
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/GamepadControls/Use"]
+margin_left = 45.0
+margin_top = 3.0
+margin_right = 48.0
+margin_bottom = 17.0
+text = "J"
+
+[node name="Special" type="HBoxContainer" parent="CenterContainer/HBoxContainer/GamepadControls"]
+margin_top = 78.0
+margin_right = 68.0
+margin_bottom = 98.0
+
+[node name="SpecialB" type="Button" parent="CenterContainer/HBoxContainer/GamepadControls/Special"]
+margin_right = 61.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath("../../../KeyboardControls/Shoot/Shoot")
+focus_neighbour_top = NodePath("../../Use/UseB")
+focus_neighbour_right = NodePath("../../../Others/CheckBox")
+focus_neighbour_bottom = NodePath("../../Map/MapB")
+text = "Special:"
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/GamepadControls/Special"]
+margin_left = 65.0
+margin_top = 3.0
+margin_right = 68.0
+margin_bottom = 17.0
+text = "J"
+
+[node name="Map" type="HBoxContainer" parent="CenterContainer/HBoxContainer/GamepadControls"]
+margin_top = 93.0
+margin_right = 68.0
+margin_bottom = 113.0
+
+[node name="MapB" type="Button" parent="CenterContainer/HBoxContainer/GamepadControls/Map"]
+margin_right = 43.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath("../../../KeyboardControls/Jump/Jump")
+focus_neighbour_top = NodePath("../../Special/SpecialB")
+focus_neighbour_right = NodePath("../../../Others/CheckBox")
+focus_neighbour_bottom = NodePath("../../../../../BackButton")
+text = "Map:"
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/GamepadControls/Map"]
+margin_left = 47.0
+margin_top = 3.0
+margin_right = 50.0
+margin_bottom = 17.0
+text = "J"
+
+[node name="Others" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+margin_left = 145.0
+margin_right = 272.0
+margin_bottom = 162.0
+custom_constants/separation = -5
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/Others"]
+margin_right = 127.0
+margin_bottom = 14.0
+text = "PREFERENCES"
+align = 1
+
+[node name="Separator" type="Label" parent="CenterContainer/HBoxContainer/Others"]
+margin_top = 9.0
+margin_right = 127.0
+margin_bottom = 23.0
+text = "-----"
+align = 1
+
+[node name="CheckBox" type="Button" parent="CenterContainer/HBoxContainer/Others"]
+margin_top = 18.0
+margin_right = 127.0
+margin_bottom = 38.0
+focus_neighbour_left = NodePath("../../GamepadControls/Shoot/ShootB")
+focus_neighbour_top = NodePath("../../../../BackButton")
+focus_neighbour_bottom = NodePath("../SFXSlider")
+text = "Toggle Full Screen"
+
+[node name="Separator2" type="Label" parent="CenterContainer/HBoxContainer/Others"]
+margin_top = 33.0
+margin_right = 127.0
+margin_bottom = 47.0
+text = "-----"
+align = 1
+
+[node name="SFXLabel" type="Label" parent="CenterContainer/HBoxContainer/Others"]
+margin_top = 42.0
+margin_right = 127.0
+margin_bottom = 56.0
+text = "SFX Volume"
+
+[node name="SFXSlider" type="HSlider" parent="CenterContainer/HBoxContainer/Others"]
+margin_top = 51.0
+margin_right = 127.0
+margin_bottom = 67.0
+focus_neighbour_top = NodePath("../CheckBox")
+focus_neighbour_bottom = NodePath("../MusicSlider")
+min_value = -30.0
+max_value = 30.0
+rounded = true
+
+[node name="MusicLabel" type="Label" parent="CenterContainer/HBoxContainer/Others"]
+margin_top = 62.0
+margin_right = 127.0
+margin_bottom = 76.0
+text = "Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="CenterContainer/HBoxContainer/Others"]
+margin_top = 71.0
+margin_right = 127.0
+margin_bottom = 87.0
+focus_neighbour_top = NodePath("../SFXSlider")
+focus_neighbour_bottom = NodePath("../../../../BackButton")
+min_value = -30.0
+max_value = 30.0
+
+[node name="BackButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -69.0
+margin_right = 20.0
+margin_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbour_left = NodePath("../CenterContainer/HBoxContainer/KeyboardControls/Map/Map")
+focus_neighbour_top = NodePath("../CenterContainer/HBoxContainer/KeyboardControls/Map/Map")
+focus_neighbour_bottom = NodePath("../CenterContainer/HBoxContainer/KeyboardControls/Left/Left")
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/KeyboardControls/Left/Left" to="." method="playBlip"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/KeyboardControls/Left/Left" to="." method="_on_Left_pressed"]
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/KeyboardControls/Right/Right" to="." method="playBlip"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/KeyboardControls/Right/Right" to="." method="_on_Right_pressed"]
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/KeyboardControls/Up/Up" to="." method="playBlip"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/KeyboardControls/Up/Up" to="." method="_on_Up_pressed"]
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/KeyboardControls/Down/Down" to="." method="playBlip"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/KeyboardControls/Down/Down" to="." method="_on_Down_pressed"]
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/KeyboardControls/Shoot/Shoot" to="." method="playBlip"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/KeyboardControls/Shoot/Shoot" to="." method="_on_Shoot_pressed"]
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/KeyboardControls/Jump/Jump" to="." method="playBlip"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/KeyboardControls/Jump/Jump" to="." method="_on_Jump_pressed"]
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/KeyboardControls/Dash/Dash" to="." method="playBlip"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/KeyboardControls/Dash/Dash" to="." method="_on_Dash_pressed"]
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/KeyboardControls/Use/Use" to="." method="playBlip"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/KeyboardControls/Use/Use" to="." method="_on_Use_pressed"]
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/KeyboardControls/Special/Special" to="." method="playBlip"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/KeyboardControls/Special/Special" to="." method="_on_Special_pressed"]
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/KeyboardControls/Map/Map" to="." method="playBlip"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/KeyboardControls/Map/Map" to="." method="_on_Map_pressed"]
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/GamepadControls/Shoot/ShootB" to="." method="playBlip"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/GamepadControls/Shoot/ShootB" to="." method="_on_ShootB_pressed"]
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/GamepadControls/Jump/JumpB" to="." method="playBlip"]
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/GamepadControls/Dash/DashB" to="." method="playBlip"]
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/GamepadControls/Use/UseB" to="." method="playBlip"]
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/GamepadControls/Special/SpecialB" to="." method="playBlip"]
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/GamepadControls/Map/MapB" to="." method="playBlip"]
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/Others/CheckBox" to="." method="playBlip"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/Others/CheckBox" to="." method="_on_CheckBox_pressed"]
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/Others/SFXSlider" to="." method="playBlip"]
+[connection signal="value_changed" from="CenterContainer/HBoxContainer/Others/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
+[connection signal="focus_entered" from="CenterContainer/HBoxContainer/Others/MusicSlider" to="." method="playBlip"]
+[connection signal="value_changed" from="CenterContainer/HBoxContainer/Others/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="focus_entered" from="BackButton" to="." method="playBlip"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

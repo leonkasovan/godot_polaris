@@ -1,0 +1,170 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://World/SavePointFrame.png" type="Texture" id=1]
+[ext_resource path="res://World/SaveStation.gd" type="Script" id=2]
+[ext_resource path="res://Effects/FlickerLight.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menus/theme.tres" type="Theme" id=4]
+[ext_resource path="res://World/Hypercube.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Animate"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.768627, 0.686275, 1, 1 ), Color( 0.192157, 0.847059, 1, 1 ), Color( 1, 0.266667, 0.713726, 1 ), Color( 0.435294, 1, 0.682353, 1 ), Color( 0.054902, 0.223529, 1, 1 ), Color( 0.768627, 0.686275, 1, 1 ), Color( 0.192157, 0.847059, 1, 1 ), Color( 1, 0.266667, 0.713726, 1 ), Color( 0.435294, 1, 0.682353, 1 ), Color( 0.054902, 0.223529, 1, 1 ), Color( 0.768627, 0.686275, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Animate"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "createDistortion"
+} ]
+}
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.486239, 1 )
+colors = PoolColorArray( 0.860352, 0, 1, 1, 0.486239, 0.561998, 1, 1, 1, 0.996078, 1, 0 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+min_value = -1.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.987552, 0.254545 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="Curve" id=7]
+_data = [ Vector2( 0, 0.339773 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=8]
+curve = SubResource( 7 )
+
+[sub_resource type="ParticlesMaterial" id=9]
+flag_rotate_y = true
+gravity = Vector3( 0, 0, 0 )
+angular_velocity = -0.17
+angular_velocity_random = 0.16
+angle_random = 0.91
+scale = 17.85
+scale_random = 0.2
+scale_curve = SubResource( 8 )
+color_ramp = SubResource( 4 )
+hue_variation = 0.6
+hue_variation_random = 0.96
+hue_variation_curve = SubResource( 6 )
+
+[node name="SaveStation" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="HyperCube" type="Sprite" parent="."]
+modulate = Color( 0.768627, 0.686275, 1, 1 )
+position = Vector2( 0, -50 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 5 )
+hframes = 12
+frame = 4
+
+[node name="Spin" type="AnimationPlayer" parent="HyperCube"]
+autoplay = "Animate"
+anims/Animate = SubResource( 1 )
+
+[node name="Animate" type="AnimationPlayer" parent="HyperCube"]
+autoplay = "Animate"
+anims/Animate = SubResource( 2 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+visible = false
+position = Vector2( 0, -24 )
+amount = 3
+lifetime = 2.0
+process_material = SubResource( 9 )
+
+[node name="FlickerLight" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -48 )
+texture_scale = 0.8
+color = Color( 0.733333, 0.443137, 1, 1 )
+energy = 1.0
+freq = 1.0
+amplitude = 0.1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = -56.0
+margin_right = 176.0
+margin_bottom = -16.0
+theme = ExtResource( 4 )
+text = "Checkpoint reached.
+Health replenished."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelRemoveTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="ShowTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -48 )
+texture = ExtResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="timeout" from="LabelRemoveTimer" to="CanvasLayer/Label" method="set" binds= [ "visible", false ]]
+[connection signal="timeout" from="ShowTimer" to="." method="_on_ShowTimer_timeout"]

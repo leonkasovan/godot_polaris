@@ -1,0 +1,6 @@
+[
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion":"Shocked", "Text": "Commander! What are you doing?!"},
+    {"Name": "Christa", "Emotion":"Neutral", "Text": "If you survive, tell them the Legendary Christa Baron died a hero."},
+    {"Name": "Christa", "Emotion":"Neutral", "Text": "You can make this right, L."},
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion":"Shocked", "Text": "COMMANDER!!"}
+]

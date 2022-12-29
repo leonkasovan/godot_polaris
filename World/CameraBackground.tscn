@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://World/BGPrologue.png" type="Texture" id=1]
+[ext_resource path="res://World/BGCanyon.png" type="Texture" id=2]
+[ext_resource path="res://World/BGCanyon2.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Animate"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("BGPrologue:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[node name="CameraBackground" type="ParallaxBackground"]
+
+[node name="Sky" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0, 0 )
+
+[node name="BGPrologue" type="Sprite" parent="Sky"]
+texture = ExtResource( 1 )
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sky"]
+autoplay = "Animate"
+anims/Animate = SubResource( 1 )
+
+[node name="Parallax2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.01, 0.01 )
+motion_offset = Vector2( 360, 0 )
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="BGCanyon2" type="Sprite" parent="Parallax2"]
+position = Vector2( 0, -144 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Parallax1" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.05, 0.05 )
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="BGCanyon" type="Sprite" parent="Parallax1"]
+position = Vector2( 0, -128 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Parallax0" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.01, 0.01 )
+motion_offset = Vector2( 360, 0 )
+motion_mirroring = Vector2( 640, 0 )

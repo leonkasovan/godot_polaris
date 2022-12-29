@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Model_CB-20Voice.wav-a212c1debc8ada727a5e754c7e6710ae.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/SFX/Voices/Model_CB-20Voice.wav"
+dest_files=[ "res://.import/Model_CB-20Voice.wav-a212c1debc8ada727a5e754c7e6710ae.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

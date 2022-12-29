@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ShipPass.wav-e3be82f0d318f6c6690a5321ac94977c.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/SFX/ShipPass.wav"
+dest_files=[ "res://.import/ShipPass.wav-e3be82f0d318f6c6690a5321ac94977c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

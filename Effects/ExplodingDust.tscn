@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Effects/Effect.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Effects/Sprites/ExplodingDust.png" type="Texture" id=2]
+[ext_resource path="res://Effects/ExplodingDust.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Animate"
+length = 1.6
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "createDustEffect"
+}, {
+"args": [  ],
+"method": "createDustEffect"
+}, {
+"args": [  ],
+"method": "createDustEffect"
+}, {
+"args": [  ],
+"method": "createDustEffect"
+}, {
+"args": [  ],
+"method": "createDustEffect"
+}, {
+"args": [  ],
+"method": "createDustEffect"
+}, {
+"args": [  ],
+"method": "createDustEffect"
+}, {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1e-05, 1e-05 ) ]
+}
+
+[node name="ExplodingDust" instance=ExtResource( 1 )]
+scale = Vector2( 1e-05, 1e-05 )
+z_index = 1
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+hframes = 4
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Animate"
+playback_speed = 1.5
+anims/Animate = SubResource( 1 )

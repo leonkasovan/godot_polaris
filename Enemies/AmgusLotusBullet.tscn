@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Enemies/AmgusLotusBullet.png" type="Texture" id=1]
+[ext_resource path="res://Common/Projectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Effects/BulletHitEffect.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Effects/BulletDisappearEffect.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Effects/FlickerLight.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Animate"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 4.12311
+
+[node name="AmgusLotusBullet" instance=ExtResource( 2 )]
+wallDestroyObj = ExtResource( 4 )
+hitDestroyObj = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource( 1 )
+hframes = 2
+frame = 1
+
+[node name="FlickerLight" parent="." index="2" instance=ExtResource( 5 )]
+texture_scale = 0.2
+color = Color( 0.980392, 0.882353, 1, 1 )
+energy = 1.0
+freq = 10.0
+
+[node name="AnimationPlayer" parent="." index="3"]
+autoplay = "Animate"
+anims/Animate = SubResource( 1 )
+
+[node name="HitBox" parent="." index="4"]
+collision_mask = 6
+damage = 5
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+shape = SubResource( 2 )
+
+[editable path="HitBox"]

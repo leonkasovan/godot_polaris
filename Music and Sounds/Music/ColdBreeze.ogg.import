@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ColdBreeze.ogg-6db920c906d0b99881525f2d6daf8a9b.oggstr"
+
+[deps]
+
+source_file="res://Music and Sounds/Music/ColdBreeze.ogg"
+dest_files=[ "res://.import/ColdBreeze.ogg-6db920c906d0b99881525f2d6daf8a9b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

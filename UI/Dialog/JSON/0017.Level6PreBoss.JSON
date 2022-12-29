@@ -1,0 +1,10 @@
+[
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion":"Neutral", "Text": "*radio noise* Uh-oh. Commander, We seem to have lost radio contact with the ship."},
+    {"Name": "Christa", "Emotion":"Neutral", "Text": "Alright. No probs, you stay here and try to establish a connection, I'll go on ahead."},
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion":"Angry", "Text": "Thats against our SOP Commander, we have to go back or we'll end up in Intergalactic Penitentiary."},
+    {"Name": "Christa", "Emotion":"Neutral", "Text": "Haha. In case you forgot, you're talking to the legendary soldier of the Intergalactic Force!"},
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion":"Neutral", "Text": "*sigh* Looks like I can't stop the great Commander Christa Baron.."},
+    {"Name": "Christa", "Emotion":"Neutral", "Text": "Shut up and follow my orders, I'll be back before you can say 'Peni-"},
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion":"Neutral", "Text": "Penitentiary."},
+    {"Name": "Christa", "Emotion":"Pout", "Text": "Okay, maybe a bit longer than that."}
+]

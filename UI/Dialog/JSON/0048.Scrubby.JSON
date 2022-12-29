@@ -1,0 +1,6 @@
+[
+    {"Name": "Scrubby", "Text": "Commander Christa... Please help us.."},
+    {"Name": "Christa", "Emotion":"Pout", "Text": "What's the matter, Scrubby?"},
+    {"Name": "Scrubby", "Text": "Commander Hydra is a monster, he makes us do 12 hour shifts!"},
+    {"Name": "Christa", "Emotion":"Pout", "Text": "Uhhm.. That's the normal shift for soldiers, Scrubby.."}
+]

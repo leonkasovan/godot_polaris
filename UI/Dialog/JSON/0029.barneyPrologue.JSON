@@ -1,0 +1,6 @@
+[
+    {"Name": "Barney", "Text": "Heading out already, Commander?"},
+    {"Name": "Christa", "Emotion":"Neutral", "Text": "Yep!"},
+    {"Name": "Barney", "Text": "Good luck! And take care of our newbie here, alright?"},
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion":"Neutral", "Text": "Tsk. I can take care of myself, Sir."}
+]

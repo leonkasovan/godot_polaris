@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/FirstFlight.ogg-c45cf2bce71d8b20ec64ec5f1485889c.oggstr"
+
+[deps]
+
+source_file="res://Music and Sounds/Music/FirstFlight.ogg"
+dest_files=[ "res://.import/FirstFlight.ogg-c45cf2bce71d8b20ec64ec5f1485889c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

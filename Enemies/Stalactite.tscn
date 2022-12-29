@@ -1,0 +1,151 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies/Stalactite.png" type="Texture" id=2]
+[ext_resource path="res://Enemies/Stalactite.gd" type="Script" id=3]
+
+[sub_resource type="Shader" id=13]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color: hint_color = vec4(1.0);
+uniform float flash_modifier: hint_range(0.0, 1.0) = 1.0;
+
+void fragment() {
+	vec4 color = texture(TEXTURE, UV);
+	color.rgb = mix(color.rgb, flash_color.rgb, flash_modifier);
+	COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=14]
+resource_local_to_scene = true
+shader = SubResource( 13 )
+shader_param/flash_color = Color( 1, 1, 1, 1 )
+shader_param/flash_modifier = 0.0
+
+[sub_resource type="OccluderPolygon2D" id=15]
+polygon = PoolVector2Array( -7, -11, 7, -11, 7, -4, 1, 11, -1, 11, -7, -4 )
+
+[sub_resource type="Animation" id=16]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+length = 0.6
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0 ), Vector2( -0.5, -0.5 ), Vector2( 0, 0 ), Vector2( 0.5, 0 ), Vector2( -0.5, -0.5 ), Vector2( 0, 0 ), Vector2( 0.5, 0 ), Vector2( -0.5, -0.5 ), Vector2( 0, 0 ), Vector2( 0.5, 0 ), Vector2( -0.5, -0.5 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "fall"
+} ]
+}
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 6, 10 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 5, 9 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 21, 61 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 3, 3 )
+
+[node name="Stalactite" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+sizeScale = 0.7
+hitBoxIgnore = NodePath("HurtBox")
+allyIgnore = true
+
+[node name="Sprite" parent="." index="0"]
+material = SubResource( 14 )
+position = Vector2( 0, 11 )
+texture = ExtResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite" index="1"]
+occluder = SubResource( 15 )
+
+[node name="AnimationPlayer" parent="." index="2"]
+anims/Idle = SubResource( 16 )
+anims/Shake = SubResource( 17 )
+
+[node name="HurtBox" parent="." index="3"]
+visible = false
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+position = Vector2( 0, 11 )
+shape = SubResource( 18 )
+
+[node name="EnemyStats" parent="." index="4"]
+maxHealth = 2
+
+[node name="HitBox" parent="." index="5"]
+visible = false
+collision_mask = 12
+damage = 10
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2( 0, 11 )
+shape = SubResource( 19 )
+disabled = true
+
+[node name="PlayerDetector" type="Area2D" parent="." index="7"]
+visible = false
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" index="0"]
+position = Vector2( 0, 48 )
+shape = SubResource( 20 )
+
+[node name="GroundDetector" type="Area2D" parent="." index="8"]
+visible = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundDetector" index="0"]
+position = Vector2( 0, 19 )
+shape = SubResource( 21 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="9"]
+visible = false
+position = Vector2( 0, 11 )
+rect = Rect2( -30, -60, 60, 60 )
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
+[connection signal="body_entered" from="GroundDetector" to="." method="_on_GroundDetector_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+
+[editable path="HurtBox"]
+[editable path="HitBox"]

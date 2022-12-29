@@ -1,0 +1,5 @@
+[
+    {"Name": "Christa", "Emotion":"Neutral", "Text": "By the way, Lieutenant, how do you like that new gun we got custom made for you?"},
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion":"Neutral", "Text": "It's doesn't really suit my style, but it lets me keep up with you at least."},
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion":"Neutral", "Text": "Dr. QBER and Wing did a great job on it."}
+]

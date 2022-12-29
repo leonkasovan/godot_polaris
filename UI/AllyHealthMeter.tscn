@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Menus/theme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/HPBackGround.png" type="Texture" id=2]
+[ext_resource path="res://UI/HPBar.png" type="Texture" id=3]
+[ext_resource path="res://UI/HPRails.png" type="Texture" id=4]
+[ext_resource path="res://UI/HPPortrait.png" type="Texture" id=5]
+[ext_resource path="res://UI/HPBox.png" type="Texture" id=6]
+[ext_resource path="res://UI/AllyHealthMeter.gd" type="Script" id=7]
+
+[node name="AllyHealthMeter" type="CanvasLayer"]
+script = ExtResource( 7 )
+
+[node name="AllyHealthMeter" type="Control" parent="."]
+margin_left = 120.0
+margin_top = 17.0
+margin_right = 200.0
+margin_bottom = 97.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HPBackGround" type="Sprite" parent="AllyHealthMeter"]
+position = Vector2( 31.9257, 8 )
+texture = ExtResource( 2 )
+
+[node name="HPBar" type="Sprite" parent="AllyHealthMeter"]
+modulate = Color( 0.454902, 0, 1, 1 )
+position = Vector2( 1, 1 )
+scale = Vector2( 62, 1 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="HPBox" type="Sprite" parent="AllyHealthMeter"]
+position = Vector2( 31.9257, 8 )
+texture = ExtResource( 6 )
+
+[node name="HPPortrait" type="Sprite" parent="AllyHealthMeter"]
+position = Vector2( -7.07433, 10 )
+texture = ExtResource( 5 )
+
+[node name="HPRails" type="Sprite" parent="AllyHealthMeter"]
+position = Vector2( 31.9257, 8 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="AllyHealthMeter"]
+visible = false
+margin_left = -0.0743256
+margin_top = 12.0
+margin_right = 109.926
+margin_bottom = 39.0
+rect_scale = Vector2( 0.8, 0.8 )
+theme = ExtResource( 1 )
+text = "50 / 50"
+__meta__ = {
+"_edit_use_anchors_": false
+}

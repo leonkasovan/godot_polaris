@@ -1,0 +1,6 @@
+[
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion":"Sad", "Text": "Heh. I hate to say I told you so. But you can still make this right."},
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion":"Neutral", "Text": "Good luck, Commander!"},
+    {"Name": "Christa", "Emotion":"Neutral", "Text": ". . . You were the best partner I could have asked for, Lieutenant.. Thanks for everything."},
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion":"Neutral", "Text": "You're welc-"}
+]

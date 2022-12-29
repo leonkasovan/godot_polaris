@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Radio.wav-782ca67a18a32ac58381682d2e29cea8.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/SFX/Radio.wav"
+dest_files=[ "res://.import/Radio.wav-782ca67a18a32ac58381682d2e29cea8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,7 @@
+[
+    {"Name": "Coherek", "Emotion" :"", "Text" : "Commander Christa! So nice of you to drop by before your mission!"},
+    {"Name": "Leo", "Emotion" :"Shocked", "NameOverride" : "Lieutenant", "Text" : "!!!...."},
+    {"Name": "Christa", "Emotion" :"Angry", "Text" : "*Whispering* Pst! Lieutenant! Stop staring at his pizza, that's very rude to them!"},
+    {"Name": "Coherek", "Emotion" :"", "Text" : "Sigh.. It's okay Commander, we Pizza Rats are used to it by now."},
+    {"Name": "Leo", "Emotion" :"Shocked", "NameOverride" : "Lieutenant", "Text" : "I- ... I'm sorry."}
+]

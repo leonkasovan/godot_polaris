@@ -1,0 +1,201 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Enemies/Spoder.png" type="Texture" id=1]
+[ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Effects/FlickerLight.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/Spoder.gd" type="Script" id=5]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color: hint_color = vec4(1.0);
+uniform float flash_modifier: hint_range(0.0, 1.0) = 1.0;
+
+void fragment() {
+	vec4 color = texture(TEXTURE, UV);
+	color.rgb = mix(color.rgb, flash_color.rgb, flash_modifier);
+	COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = SubResource( 1 )
+shader_param/flash_color = Color( 1, 1, 1, 1 )
+shader_param/flash_modifier = 0.0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16, 8 )
+
+[sub_resource type="Animation" id=4]
+length = 0.5
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Jump"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Walk"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 3, 4, 5 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "createDustEffect"
+}, {
+"args": [  ],
+"method": "createDustEffect"
+}, {
+"args": [  ],
+"method": "createDustEffect"
+}, {
+"args": [  ],
+"method": "createDustEffect"
+} ]
+}
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 14.0
+height = 12.0
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 13.0384
+
+[node name="Spoder" instance=ExtResource( 2 )]
+script = ExtResource( 5 )
+maxSpeed = 60
+
+[node name="Sprite" parent="." index="0"]
+material = SubResource( 2 )
+position = Vector2( 0, -32 )
+texture = ExtResource( 1 )
+hframes = 7
+
+[node name="Center" parent="Sprite" index="0"]
+position = Vector2( 0, 17 )
+
+[node name="FlickerLight" parent="Sprite/Center" index="0" instance=ExtResource( 3 )]
+color = Color( 0.945098, 0.678431, 1, 1 )
+energy = 1.2
+
+[node name="FloorCast" type="RayCast2D" parent="Sprite" index="1"]
+position = Vector2( 13, 27 )
+enabled = true
+cast_to = Vector2( 0, 6 )
+collision_mask = 2
+
+[node name="JumpFloorCast" type="RayCast2D" parent="Sprite" index="2"]
+position = Vector2( 15, 27 )
+enabled = true
+cast_to = Vector2( 0, 30 )
+collision_mask = 2
+
+[node name="WallCast" type="RayCast2D" parent="Sprite" index="3"]
+position = Vector2( 13, 27 )
+enabled = true
+cast_to = Vector2( 6, 0 )
+collision_mask = 2
+
+[node name="PlayerCast" type="RayCast2D" parent="Sprite" index="4"]
+position = Vector2( 13, 27 )
+enabled = true
+cast_to = Vector2( 300, 0 )
+
+[node name="JumpCast" type="RayCast2D" parent="Sprite" index="5"]
+position = Vector2( 13, 27 )
+enabled = true
+cast_to = Vector2( 100, 0 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0, -8 )
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" parent="." index="2"]
+anims/Idle = SubResource( 4 )
+anims/Jump = SubResource( 5 )
+anims/Walk = SubResource( 6 )
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+position = Vector2( 0, -14 )
+rotation = 1.5708
+shape = SubResource( 7 )
+
+[node name="EnemyStats" parent="." index="4"]
+maxHealth = 4
+
+[node name="HitBox" parent="." index="5"]
+damage = 6
+knockback = 150.0
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2( 0, -13 )
+shape = SubResource( 8 )
+
+[node name="StateTimer" type="Timer" parent="." index="7"]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="JumpCoolDown" type="Timer" parent="." index="8"]
+wait_time = 2.0
+one_shot = true
+
+[node name="JustJumped" type="Timer" parent="." index="9"]
+wait_time = 0.1
+one_shot = true
+
+[node name="DetectTimer" type="Timer" parent="." index="10"]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="StateTimer" to="." method="_on_StateTimer_timeout"]
+[connection signal="timeout" from="DetectTimer" to="." method="_on_DetectTimer_timeout"]
+
+[editable path="HurtBox"]
+[editable path="HitBox"]

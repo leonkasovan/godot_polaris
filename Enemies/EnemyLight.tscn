@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Effects/Sprites/LightTexture.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Light2D
+
+var time = 0
+export(float) var radius = 1.0
+export(float) var amplitude = 0.05
+export(float) var freq = 5.0
+
+func _process(delta):
+	time += delta
+	var _radius = radius + sin(time * freq) * amplitude
+	texture_scale = abs(_radius)
+"
+
+[node name="EnemyLight" type="Light2D"]
+position = Vector2( 0, 15 )
+texture = ExtResource( 1 )
+texture_scale = 0.4
+color = Color( 0.823529, 0.392157, 1, 1 )
+energy = 1.58
+script = SubResource( 1 )
+radius = 0.4
+amplitude = 0.025

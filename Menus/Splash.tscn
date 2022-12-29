@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Menus/theme.tres" type="Theme" id=1]
+[ext_resource path="res://Menus/HarambertLogo.png" type="Texture" id=2]
+[ext_resource path="res://Menus/Splash.gd" type="Script" id=3]
+
+[node name="Splash" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.603
+anchor_bottom = 0.5
+margin_left = -16.0
+margin_top = -40.0
+margin_right = 11.88
+margin_bottom = -8.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -41.0
+margin_top = 30.0
+margin_right = 41.0
+margin_bottom = 52.0
+text = "Harambert"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0156863, 0.00392157, 0.0666667, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

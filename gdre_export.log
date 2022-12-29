@@ -1,0 +1,73 @@
+GDRE Tools v0.4.8
+Windows 10.0.19044, NVIDIA GeForce MX350, vulkan
+Extracted 833 files, no errors detected!
+USER WARNING: Converting lossy imports, you may lose fidelity for indicated assets when re-importing upon loading the project
+   at: ImportExporter::_export_imports (modules\gdsdecomp\utility\import_exporter.cpp:51)
+Script version 3.3.x detected
+Saved project config to D:/Projects/Godot/Polaris/project.godot
+Recreated plugin config for ridiculous_coding
+USER WARNING: Decompression not implemented yet for texture format DXT5 RGBA8
+   at: ImportExporter::_convert_tex (modules\gdsdecomp\utility\import_exporter.cpp:752)
+USER WARNING: Conversion for Resource of type Texture and format DXT5 RGBA8 not implemented
+   at: ImportExporter::report_unsupported_resource (modules\gdsdecomp\utility\import_exporter.cpp:799)
+Did not convert Texture resource res://.import/circle.png-bb6027fc4e63126420105e77096d288e.s3tc.stex
+USER WARNING: Decompression not implemented yet for texture format DXT5 RGBA8
+   at: ImportExporter::_convert_tex (modules\gdsdecomp\utility\import_exporter.cpp:752)
+Did not convert Texture resource res://.import/Dust.png-f0c09b13b27d339cf3ae698997a07414.s3tc.stex
+USER WARNING: Decompression not implemented yet for texture format DXT5 RGBA8
+   at: ImportExporter::_convert_tex (modules\gdsdecomp\utility\import_exporter.cpp:752)
+Did not convert Texture resource res://.import/IntroShip.png-2afb1d95f43fcaf2c9fda7d5104f2be5.s3tc.stex
+USER WARNING: Decompression not implemented yet for texture format DXT1 RGB8
+   at: ImportExporter::_convert_tex (modules\gdsdecomp\utility\import_exporter.cpp:752)
+USER WARNING: Conversion for Resource of type Texture and format DXT1 RGB8 not implemented
+   at: ImportExporter::report_unsupported_resource (modules\gdsdecomp\utility\import_exporter.cpp:799)
+Did not convert Texture resource res://.import/PlanetTexture.png-400d68f19e0267245aaa86be6b588b7c.s3tc.stex
+USER WARNING: Decompression not implemented yet for texture format DXT5 RGBA8
+   at: ImportExporter::_convert_tex (modules\gdsdecomp\utility\import_exporter.cpp:752)
+Did not convert Texture resource res://.import/StarBG.png-99bee3a19208a5f97d37c55bc5e348f4.s3tc.stex
+Saved project config to D:/Projects/Godot/Polaris/project.godot
+
+
+********************************EXPORT REPORT********************************
+
+Totals:                                 
+Decompiled scripts:                     96
+Failed scripts:                         0
+Imported resources for export session:  833
+Successfully converted:                 195
+Lossy:                                  0
+Rewrote metadata:                       0
+Non-importable conversions:             0
+Not converted:                          5
+Failed conversions:                     0
+-------------
+
+------
+
+The following files were not converted because support has not been implemented yet:
+res://.import/circle.png-bb6027fc4e63126420105e77096d288e.s3tc.stex
+res://.import/Dust.png-f0c09b13b27d339cf3ae698997a07414.s3tc.stex
+res://.import/IntroShip.png-2afb1d95f43fcaf2c9fda7d5104f2be5.s3tc.stex
+res://.import/PlanetTexture.png-400d68f19e0267245aaa86be6b588b7c.s3tc.stex
+res://.import/StarBG.png-99bee3a19208a5f97d37c55bc5e348f4.s3tc.stex
+
+
+
+---------------------------------IMPORTANT NOTES----------------------------------
+
+The following resource types were detected in the project that conversion is not implemented for yet:
+Type: Texture             	Format: DXT5 RGBA8
+Type: Texture             	Format: DXT1 RGB8
+See Export Report to see which resources were not exported.
+You will still be able to edit the project in the editor regardless.
+
+
+------------------------------------------------------------------------------------
+
+Use Godot editor version 3.3 to edit the project.
+Note: the project may be using a custom version of Godot. Detection for this has not been implemented yet.
+If you find that you have many non-import errors upon opening the project 
+(i.e. scripts or shaders have many errors), use the original game's binary as the export template.
+
+*******************************************************************************
+

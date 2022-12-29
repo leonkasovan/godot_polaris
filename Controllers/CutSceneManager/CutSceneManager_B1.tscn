@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Controllers/CutSceneManager/CutSceneManager_B1.gd" type="Script" id=1]
+[ext_resource path="res://World/Door_B1.png" type="Texture" id=2]
+[ext_resource path="res://Enemies/BoneBossSpawner.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/BoneBoss.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/Dialog/Interact.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 23, 31 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 32 )
+
+[node name="CutSceneManager_B1" type="Node2D"]
+script = ExtResource( 1 )
+dialogPath = [ "res://UI/Dialog/JSON/0009_Boss1.JSON", "res://UI/Dialog/JSON/0010_Boss1.JSON", "res://UI/Dialog/JSON/0011_Boss1Defeated.JSON", "res://UI/Dialog/JSON/0012_Boss1Defeated .JSON" ]
+
+[node name="Door" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="Door"]
+position = Vector2( 0, -31 )
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 48, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2( 0, -31 )
+shape = SubResource( 1 )
+
+[node name="DustTimer" type="Timer" parent="Door"]
+wait_time = 0.1
+
+[node name="BoneBossSpawner" parent="." instance=ExtResource( 3 )]
+position = Vector2( -56, -17 )
+
+[node name="BoneBoss" parent="." instance=ExtResource( 4 )]
+position = Vector2( -24, -95 )
+
+[node name="Interact" parent="." instance=ExtResource( 5 )]
+interactOnly = true
+
+[node name="CollisionShape2D" parent="Interact/Area2D" index="0"]
+position = Vector2( -140, -32 )
+shape = SubResource( 2 )
+
+[connection signal="timeout" from="Door/DustTimer" to="." method="_on_DustTimer_timeout"]
+
+[editable path="Interact"]

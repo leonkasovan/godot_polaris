@@ -1,0 +1,9 @@
+[
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion" : "Neutral", "Text" : "Uhh.. Commander?"},
+    {"Name": "Christa", "Emotion" :"Neutral", "Text" : "Yeah?"},
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion" : "Neutral", "Text" : "Something seems.. Off with this mission."},
+    {"Name": "Christa", "Emotion" :"Neutral", "Text" : "Ha ha! It's normal to be nervous on your first intergalactic mission, Lieutenant!"},
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion" : "Neutral", "Text" : "No, it's not that.."},
+    {"Name": "Christa", "Emotion" :"Neutral", "Text" : "Don't worry about it, L. You trained hard for this. It's gonna be fine!"},
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion" : "Neutral", "Text" : ". . . Alright."}
+]

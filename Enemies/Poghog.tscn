@@ -1,0 +1,157 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies/Poghog.png" type="Texture" id=2]
+[ext_resource path="res://Enemies/Poghog.gd" type="Script" id=3]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color: hint_color = vec4(1.0);
+uniform float flash_modifier: hint_range(0.0, 1.0) = 1.0;
+
+void fragment() {
+	vec4 color = texture(TEXTURE, UV);
+	color.rgb = mix(color.rgb, flash_color.rgb, flash_modifier);
+	COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = SubResource( 1 )
+shader_param/flash_color = Color( 1, 1, 1, 1 )
+shader_param/flash_modifier = 0.0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 13, 7 )
+
+[sub_resource type="Animation" id=4]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Walk"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "createDustEffect"
+}, {
+"args": [  ],
+"method": "createDustEffect"
+}, {
+"args": [  ],
+"method": "createDustEffect"
+} ]
+}
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 13.0
+height = 10.0
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 11.0
+height = 10.0
+
+[node name="Poghog" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+maxSpeed = 60
+
+[node name="Sprite" parent="." index="0"]
+material = SubResource( 2 )
+position = Vector2( 0, -32 )
+texture = ExtResource( 2 )
+hframes = 7
+frame = 6
+
+[node name="Center" parent="Sprite" index="0"]
+position = Vector2( 0, 19 )
+
+[node name="FloorCast" type="RayCast2D" parent="Sprite" index="1"]
+position = Vector2( 13, 27 )
+enabled = true
+cast_to = Vector2( 0, 6 )
+collision_mask = 2
+
+[node name="WallCast" type="RayCast2D" parent="Sprite" index="2"]
+position = Vector2( 13, 27 )
+enabled = true
+cast_to = Vector2( 6, 0 )
+collision_mask = 2
+
+[node name="PlayerCast" type="RayCast2D" parent="Sprite" index="3"]
+position = Vector2( 13, 27 )
+enabled = true
+cast_to = Vector2( 300, 0 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0, -7 )
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" parent="." index="2"]
+anims/Idle = SubResource( 4 )
+anims/Walk = SubResource( 5 )
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+position = Vector2( 0, -13 )
+rotation = 1.5708
+shape = SubResource( 6 )
+
+[node name="EnemyStats" parent="." index="4"]
+maxHealth = 3
+
+[node name="HitBox" parent="." index="5"]
+damage = 5
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2( 0, -13 )
+rotation = 1.5708
+shape = SubResource( 7 )
+
+[node name="StateTimer" type="Timer" parent="." index="7"]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="DetectTimer" type="Timer" parent="." index="8"]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="StateTimer" to="." method="_on_StateTimer_timeout"]
+[connection signal="timeout" from="DetectTimer" to="." method="_on_DetectTimer_timeout"]
+
+[editable path="HurtBox"]
+[editable path="HitBox"]

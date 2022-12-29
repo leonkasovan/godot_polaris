@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ChristaVoice.wav-e85c5d9a161ebb1be16d9a09c4c3f6b7.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/SFX/Voices/ChristaVoice.wav"
+dest_files=[ "res://.import/ChristaVoice.wav-e85c5d9a161ebb1be16d9a09c4c3f6b7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

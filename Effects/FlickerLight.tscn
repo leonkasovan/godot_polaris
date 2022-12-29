@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://FlickerLight.gd" type="Script" id=1]
+[ext_resource path="res://Effects/Sprites/LightTexture.png" type="Texture" id=2]
+
+[node name="FlickerLight" type="Light2D" groups=[
+"FlickerLight",
+]]
+texture = ExtResource( 2 )
+texture_scale = 0.5
+color = Color( 1, 0.176471, 0.831373, 1 )
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_buffer_size = 512
+script = ExtResource( 1 )

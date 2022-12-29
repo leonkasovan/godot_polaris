@@ -1,0 +1,8 @@
+[
+    {"Name": "Christa", "Emotion":"Pout", "Text": "Hi, Hydra."},
+    {"Name": "Hydra", "Text": ". . ."},
+    {"Name": "Christa", "Emotion":"Pout", "Text": "Jeez, you're extra gloomy today."},
+    {"Name": "Hydra", "Text": ". . . I just came from RND . . ."},
+    {"Name": "Christa", "Emotion":"Pout", "Text": "And..?"},
+    {"Name": "Hydra", "Text": "Nevermind.. Just be careful out there, Christa."}
+]

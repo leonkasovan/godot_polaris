@@ -1,0 +1,15 @@
+[
+    {"Name": "Christa", "Emotion" :"Neutral", "Text" : "Whoa! Nice landing, Captain!"},
+    {"Name": "Capt. Injustice", "Emotion" : "", "Text": "And I wasn't even looking at the controls."},
+    {"Name": "Christa", "Emotion" : "Pout", "Text" : "Oh wow, Captain Injustice, you're so cool!"},
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion" : "Neutral", "Text" : "Uhh.. Sir? Can we get to the mission briefing, please?"},
+    {"Name": "Capt. Injustice", "Emotion" : "", "Text": "Tsk.. Fine. Your mission is to retrieve an Ancient Weapon to the cave East of here."},
+    {"Name": "Capt. Injustice", "Emotion" : "", "Text": "It's going to be a tough mission, many soldiers have already died in attempt."},
+    {"Name": "Capt. Injustice", "Emotion" : "", "Text": "But I know you can do it, cause you're the legendary Commander Christa Baron!"},
+    {"Name": "Christa", "Emotion" :"Neutral", "Text" : "Wow, thanks, Captain!"},
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion" : "Neutral", "Text" : "*She seriously fell for it...*"},
+    {"Name": "Capt. Injustice", "Emotion" : "", "Text": "Oh.. And please take care of Lieutenant here, it's his first mission with our team."},
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion" : "Neutral", "Text" : "I can take care of myself, Sir."},
+    {"Name": "Christa", "Emotion" :"Neutral", "Text" : "Sure you can, Lieutenant!"},
+    {"Name": "Capt. Injustice", "Emotion" : "", "Text": "That will be all.. Dismissed!"}
+]

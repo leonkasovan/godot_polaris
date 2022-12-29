@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DesolateStarSystem.ogg-9159d2dcfc9241d66e1f7876d6619abd.oggstr"
+
+[deps]
+
+source_file="res://Music and Sounds/Music/DesolateStarSystem.ogg"
+dest_files=[ "res://.import/DesolateStarSystem.ogg-9159d2dcfc9241d66e1f7876d6619abd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

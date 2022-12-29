@@ -1,0 +1,166 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/16bfZX.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Effects/FlickerLight.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Allies/Wing.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Controllers/CutSceneManager/CutsceneManagerGeneric.tscn" type="PackedScene" id=5]
+[ext_resource path="res://World/Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Controllers/Camera.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World/InteractDoor.tscn" type="PackedScene" id=9]
+[ext_resource path="res://World/FNS.tscn" type="PackedScene" id=10]
+[ext_resource path="res://UI/Dialog/Interact.tscn" type="PackedScene" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 56 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 32 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 24, 10 )
+
+[sub_resource type="CanvasItemMaterial" id=4]
+light_mode = 1
+
+[sub_resource type="DynamicFont" id=5]
+size = 14
+font_data = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 20, 6 )
+
+[node name="Level_0_Ship" instance=ExtResource( 1 )]
+mapCoords = Vector2( 1, 3 )
+isDark = true
+DarkColor = Color( 0.380392, 0.321569, 0.388235, 1 )
+UIoff = true
+music = "FirstFlight"
+musicTransTime = 3.0
+
+[node name="TileMapBG" parent="." index="0"]
+tile_data = PoolIntArray( 589823, 536870918, 3, 524288, 536870918, 3, 524289, 536870918, 3, 524290, 536870918, 3, 524291, 536870918, 3, 524292, 536870918, 3, 524293, 536870918, 3, 524294, 536870918, 3, 524295, 536870918, 3, 524296, 536870918, 3, 524297, 536870918, 3, 524298, 536870918, 3, 524299, 536870918, 3, 524300, 536870918, 3, 524301, 536870918, 3, 524302, 536870918, 3, 524303, 536870918, 3, 524304, 536870918, 3, 524305, 536870921, 0, 524310, 536870918, 3, 524311, 536870918, 3, 524312, 536870918, 3, 524313, 536870918, 3, 524314, 536870918, 3, 524315, 536870918, 3, 524316, 536870918, 3, 524317, 536870918, 3, 524318, 536870918, 3, 524319, 536870918, 3, 524320, 536870921, 0, 524325, 536870918, 3, 524326, 536870918, 3, 524327, 536870918, 3, 524328, 536870918, 3, 589824, 536870918, 3, 589825, 536870918, 3, 589826, 536870918, 3, 589827, 536870918, 3, 589828, 536870918, 3, 589829, 536870918, 3, 589830, 536870918, 3, 589831, 536870918, 3, 589832, 536870918, 3, 589833, 536870918, 3, 589834, 536870918, 3, 589835, 536870918, 3, 589836, 536870918, 3, 589837, 536870918, 3, 589838, 536870918, 3, 589839, 536870918, 3, 589840, 536870918, 3, 589846, 536870918, 3, 589847, 536870918, 3, 589848, 536870918, 3, 589849, 536870918, 3, 589850, 536870918, 3, 589851, 536870918, 3, 589852, 536870918, 3, 589853, 536870918, 3, 589854, 536870918, 3, 589855, 536870918, 3, 589861, 536870918, 3, 589862, 536870918, 3, 589863, 536870918, 3, 589864, 536870918, 3, 655360, 536870918, 3, 655361, 536870918, 3, 655362, 536870918, 3, 655363, 536870918, 3, 655364, 536870918, 3, 655365, 536870918, 3, 655366, 536870918, 3, 655367, 536870918, 3, 655368, 536870918, 3, 655369, 536870918, 3, 655370, 536870918, 3, 655371, 536870918, 3, 655372, 536870918, 3, 655373, 536870918, 3, 655374, 536870918, 3, 655375, 536870918, 3, 655376, 536870918, 3, 655382, 536870918, 3, 655383, 536870918, 3, 655384, 536870918, 3, 655385, 536870918, 3, 655386, 536870918, 3, 655387, 536870918, 3, 655388, 536870918, 3, 655389, 536870918, 3, 655390, 536870918, 3, 655391, 536870918, 3, 655397, 536870918, 3, 655398, 536870918, 3, 655399, 536870918, 3, 655400, 536870918, 3, 786431, 536870918, 0, 720896, 536870918, 0, 720897, 536870918, 0, 720898, 536870918, 0, 720899, 536870918, 0, 720900, 536870918, 0, 720901, 536870918, 0, 720902, 6, 1, 720903, 6, 2, 720904, 6, 2, 720905, 6, 2, 720906, 6, 2, 720907, 6, 2, 720908, 6, 2, 720909, 536870918, 1, 720910, 536870918, 0, 720911, 536870918, 0, 720912, 536870918, 0, 720918, 536870918, 0, 720919, 536870918, 0, 720920, 536870918, 0, 720921, 536870918, 0, 720922, 536870918, 0, 720923, 536870918, 0, 720924, 6, 1, 720925, 536870918, 2, 720926, 536870918, 2, 720927, 536870918, 2, 720933, 536870918, 2, 720934, 536870918, 2, 720935, 536870918, 2, 720936, 536870918, 2, 851967, 536870918, 3, 786432, 536870918, 3, 786433, 536870918, 3, 786434, 536870918, 3, 786435, 536870918, 3, 786436, 536870918, 3, 786437, 536870918, 3, 786438, 536870918, 3, 786439, 536870918, 3, 786440, 536870918, 3, 786441, 536870918, 3, 786442, 536870918, 3, 786443, 536870918, 3, 786444, 536870918, 3, 786445, 536870918, 3, 786446, 536870918, 3, 786447, 536870918, 3, 786448, 536870918, 3, 786454, 536870918, 3, 786455, 536870918, 3, 786456, 536870918, 3, 786457, 536870918, 3, 786458, 536870918, 3, 786459, 536870918, 3, 786460, 536870918, 3, 786461, 536870918, 3, 786462, 536870918, 3, 786463, 536870918, 3, 786469, 536870918, 3, 786470, 536870918, 3, 786471, 536870918, 3, 786472, 536870918, 3, 917503, 536870918, 3, 851968, 536870918, 3, 851969, 536870918, 3, 851970, 536870918, 3, 851971, 536870918, 3, 851972, 536870918, 3, 851973, 536870918, 3, 851974, 536870918, 3, 851975, 536870918, 3, 851976, 536870918, 3, 851977, 536870918, 3, 851978, 536870918, 3, 851979, 536870918, 3, 851980, 536870918, 3, 851981, 536870918, 3, 851982, 536870918, 3, 851983, 536870918, 3, 851984, 536870918, 3, 851990, 536870918, 3, 851991, 536870918, 3, 851992, 536870918, 3, 851993, 536870918, 3, 851994, 536870918, 3, 851995, 536870918, 3, 851996, 536870918, 3, 851997, 536870918, 3, 851998, 536870918, 3, 851999, 536870918, 3, 852005, 536870918, 3, 852006, 536870918, 3, 852007, 536870918, 3, 852008, 536870918, 3, 983039, 536870918, 3, 917504, 536870918, 3, 917505, 536870918, 3, 917506, 536870918, 3, 917507, 536870918, 3, 917508, 536870918, 3, 917509, 536870918, 3, 917510, 536870918, 3, 917511, 536870918, 3, 917512, 536870918, 3, 917513, 536870918, 3, 917514, 536870918, 3, 917515, 536870918, 3, 917516, 536870918, 3, 917517, 536870918, 3, 917518, 536870918, 3, 917519, 536870918, 3, 917520, 536870918, 3, 917526, 536870918, 3, 917527, 536870918, 3, 917528, 536870918, 3, 917529, 536870918, 3, 917530, 536870918, 3, 917531, 536870918, 3, 917532, 536870918, 3, 917533, 536870918, 3, 917534, 536870918, 3, 917535, 536870918, 3, 917541, 536870918, 3, 917542, 536870918, 3, 917543, 536870918, 3, 917544, 536870918, 3 )
+
+[node name="TileMap" parent="." index="1"]
+tile_data = PoolIntArray( 524287, 2, 0, 458752, 2, 1, 458753, 2, 5, 458754, 2, 196609, 458755, 2, 196609, 458756, 2, 196609, 458757, 2, 196609, 458758, 2, 196609, 458759, 2, 196609, 458760, 2, 196609, 458761, 2, 196609, 458762, 2, 196609, 458763, 2, 196609, 458764, 2, 196609, 458765, 2, 196609, 458766, 2, 196609, 458767, 2, 196609, 458768, 2, 196609, 458769, 2, 196609, 458770, 2, 196609, 458771, 2, 196609, 458772, 2, 196609, 458773, 2, 196609, 458774, 2, 196609, 458775, 2, 196609, 458776, 2, 196609, 458777, 2, 196609, 458778, 2, 196609, 458779, 2, 196609, 458780, 2, 196609, 458781, 2, 196609, 458782, 2, 196609, 458783, 2, 196609, 458784, 2, 196609, 458785, 2, 196609, 458786, 2, 196609, 458787, 2, 196609, 458788, 2, 196609, 458789, 2, 196609, 458790, 2, 6, 458791, 2, 1, 458792, 2, 2, 589823, 2, 65536, 524288, 2, 65537, 524289, 2, 65538, 524326, 2, 65536, 524327, 2, 65537, 524328, 536870914, 65538, 655359, 2, 131072, 589824, 2, 131073, 589825, 2, 131074, 589862, 2, 131072, 589863, 536870914, 131073, 589864, 536870914, 131074, 655369, 536870918, 4, 655374, 536870918, 4, 655390, 536870918, 4, 786441, 536870920, 0, 786446, 536870920, 0, 786456, 536870920, 0, 1048575, 2, 196608, 983040, 2, 196609, 983041, 2, 196609, 983042, 2, 196609, 983043, 2, 196609, 983044, 2, 196609, 983045, 2, 196609, 983046, 2, 196609, 983047, 2, 196609, 983048, 2, 196609, 983049, 2, 196609, 983050, 2, 196609, 983051, 2, 196609, 983052, 2, 196609, 983053, 2, 196609, 983054, 2, 196609, 983055, 2, 196609, 983056, 2, 196609, 983057, 2, 196609, 983058, 2, 196609, 983059, 2, 196609, 983060, 2, 196609, 983061, 2, 196609, 983062, 2, 196609, 983063, 2, 196609, 983064, 2, 196609, 983065, 2, 196609, 983066, 2, 196609, 983067, 2, 196609, 983068, 2, 196609, 983069, 2, 196609, 983070, 2, 196609, 983071, 2, 196609, 983072, 2, 196609, 983073, 2, 196609, 983074, 2, 196609, 983075, 2, 196609, 983076, 2, 196609, 983077, 2, 196609, 983078, 2, 196609, 983079, 2, 196609, 983080, 2, 196610 )
+
+[node name="Player" parent="." index="2" instance=ExtResource( 8 )]
+position = Vector2( 240, 240 )
+
+[node name="Camera" parent="." index="3" instance=ExtResource( 7 )]
+limit_top = 0
+limit_right = 640
+
+[node name="Door" parent="." index="4" instance=ExtResource( 6 )]
+position = Vector2( 616, 240 )
+nextPosX = 40
+nextPosY = 160
+
+[node name="CollisionShape2D" parent="Door" index="0"]
+position = Vector2( 32, -56 )
+shape = SubResource( 1 )
+
+[node name="Door2" parent="." index="5" instance=ExtResource( 6 )]
+position = Vector2( 24, 240 )
+nextRoom = "res://Levels/Level_0_Bridge.tscn"
+nextPosX = 616
+nextPosY = 240
+flipX = true
+
+[node name="CollisionShape2D" parent="Door2" index="0"]
+position = Vector2( -32, -32 )
+shape = SubResource( 2 )
+
+[node name="FNS" parent="." index="6" instance=ExtResource( 10 )]
+position = Vector2( 85, 225 )
+
+[node name="Interact" parent="FNS" index="1" instance=ExtResource( 12 )]
+dialogPath = [ "res://UI/Dialog/JSON/0013.FNS_Controls.JSON" ]
+
+[node name="CollisionShape2D" parent="FNS/Interact/Area2D" index="0"]
+position = Vector2( 0, 6 )
+shape = SubResource( 3 )
+
+[node name="Wing" parent="." index="7" instance=ExtResource( 4 )]
+position = Vector2( 375.993, 197.207 )
+
+[node name="CutsceneManageGeneric" parent="." index="8" instance=ExtResource( 5 )]
+position = Vector2( 565, 178 )
+dialogPath = "res://UI/Dialog/JSON/0026.WingSuspiciousPrologue.JSON"
+eventId = "wingSuspicious"
+playerXScale = -1
+
+[node name="FlickerLight" parent="." index="9" instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 152, 167 )
+texture_scale = 0.8
+color = Color( 1, 1, 1, 1 )
+energy = 0.7
+freq = 1.0
+
+[node name="FlickerLight2" parent="." index="10" instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 232, 167 )
+texture_scale = 0.8
+color = Color( 1, 1, 1, 1 )
+energy = 0.7
+freq = 1.0
+
+[node name="FlickerLight3" parent="." index="11" instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 488, 168 )
+texture_scale = 0.8
+color = Color( 1, 1, 1, 1 )
+energy = 0.7
+freq = 1.0
+
+[node name="FlickerLight4" parent="." index="12" instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 400, 197 )
+texture_scale = 0.15
+color = Color( 1, 0.0941176, 0.435294, 1 )
+energy = 0.7
+freq = 1.0
+amplitude = 0.01
+
+[node name="Label" type="Label" parent="." index="13"]
+show_behind_parent = true
+material = SubResource( 4 )
+margin_left = 392.0
+margin_top = 192.0
+margin_right = 432.0
+margin_bottom = 206.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 0.333333, 0.631373, 1 )
+text = "RND"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RNDDoor" type="Node2D" parent="." index="14"]
+position = Vector2( 400, 189 )
+
+[node name="Interact" parent="RNDDoor" index="0" instance=ExtResource( 12 )]
+position = Vector2( -1, 30 )
+dialogPath = [ "res://UI/Dialog/JSON/0046.RNDLocked.JSON" ]
+
+[node name="Area2D" parent="RNDDoor/Interact" index="0"]
+position = Vector2( 0, 4 )
+
+[node name="CollisionShape2D" parent="RNDDoor/Interact/Area2D" index="0"]
+position = Vector2( 2, 12 )
+shape = SubResource( 6 )
+
+[node name="InteractDoor" parent="." index="15" instance=ExtResource( 9 )]
+position = Vector2( 240, 240 )
+nextRoom = "res://Levels/Level_0_ShipBarracks.tscn"
+nextPosX = 320
+nextPosY = 240
+
+[editable path="TileMapBG"]
+[editable path="Camera"]
+[editable path="Door"]
+[editable path="Door2"]
+[editable path="FNS/Interact"]
+[editable path="RNDDoor/Interact"]

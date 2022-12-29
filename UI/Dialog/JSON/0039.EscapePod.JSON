@@ -1,0 +1,5 @@
+[
+    {"Name": "Leo", "NameOverride":"Lieutenant", "Emotion":"Sad", "Text": "One Escape Pod.. We just can't catch a break, can we, Commander?"},
+    {"Name": "Christa", "Emotion":"Angry", "Text": ". . . It's my fault.. I thought this was just another mission.. I didn't bother to deploy additional Escape Pods."},
+    {"Name": "Christa", "Emotion":"Neutral", "Text": "You were right, Lieutenant. This was a setup. I should have beleived you."}
+]

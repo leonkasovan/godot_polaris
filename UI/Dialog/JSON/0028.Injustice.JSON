@@ -1,0 +1,7 @@
+[
+    {"Name": "Capt. Injustice", "Emotion" :"", "Text" : "By the way, Commander, I noticed you only ordered one Escape Pod for this mission."},
+    {"Name": "Christa", "Emotion" :"Neutral", "Text" : "Don't worry about it, Sir. We won't need it anyways! Better save us some money for parties!"},
+    {"Name": "Capt. Injustice", "Emotion" :"", "Text" : "Hmm. You know not having enough Escape Pods is against the regulations."},
+    {"Name": "Christa", "Emotion" :"Neutral", "Text" : "Pft. We're lightyears away from the Central Base, Sir. Who's gonna check?"},
+    {"Name": "Capt. Injustice", "Emotion" :"", "Text" : "Alright. But if you get caught breaking the rules, leave me out of it."}
+]

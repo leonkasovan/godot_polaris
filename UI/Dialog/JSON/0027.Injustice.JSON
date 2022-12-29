@@ -1,0 +1,6 @@
+[
+    {"Name": "Capt. Injustice", "Emotion" :"", "Text" : "Commander, are you sure your Lieutenant can handle himself out there?"},
+    {"Name": "Christa", "Emotion" :"Neutral", "Text" : "Absolutely, Sir! I trained the heck out of him for this. He worked hard to be in this team."},
+    {"Name": "Capt. Injustice", "Emotion" :"", "Text" : "To be honest he looks weak. But since you're the legendary Christa Baron, I'll take your word for it."},
+    {"Name": "Leo", "Emotion" :"Neutral", "NameOverride" : "Lieutenant", "Text" : ". . . I'm right here, Sir."}
+]

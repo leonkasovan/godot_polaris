@@ -1,0 +1,6 @@
+[
+    {"Name": "Barney", "Text": "Don't worry about the ship, Commander! We'll take care of things in here."},
+    {"Name": "Christa", "Emotion":"Neutral", "Text": "Thanks, Barney! You always got my back."},
+    {"Name": "Christa", "Emotion":"Angry", "Text": "Just make sure Captain Injustice doesn't partake in... deplorable activities again.."},
+    {"Name": "Barney", "Text": ". . . Roger that."}
+]
